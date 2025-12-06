@@ -1,0 +1,28 @@
+var express = require('express'),
+    http = require('http'),
+    redis = require('redis');
+
+var app = express();
+
+// Updated for Redis client v4+ using URL
+var client = redis.createClient({
+  url: 'redis://redis:6379'
+});
+
+// Connect to Redis
+client.connect().catch(console.error);
+
+
+app.get('/', async function(req, res, next) {
+  try {
+    const counter = await client.incr('counter');
+    const hostname = require('os').hostname();
+    res.send('This page has been viewed ' + counter + ' times!\nServed by container: ' + hostname);
+  } catch(err) {
+    return next(err);
+  }
+});
+
+http.createServer(app).listen(process.env.PORT || 8080, function() {
+  console.log('Listening on port ' + (process.env.PORT || 8080));
+});
