@@ -15,9 +15,10 @@ async function start() {
   await client.connect();
 
   app.get("/", async (req, res) => {
-    // Increment a key "counter"
     const value = await client.incr("counter");
-    res.send(`Counter value: ${value}`);
+    const hostname = require('os').hostname();
+
+    res.send('This page has been viewed ' + value + ' times!\nServed by container: ' + hostname);
   });
 
   app.listen(port, () => {
