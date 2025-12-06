@@ -3,7 +3,7 @@ services:
   nginx:
     build:
       context: ./nginx
-      dockerfile: Dockerfile.standalone
+      dockerfile: standalone/Dockerfile
     links:
       - node-01:node-01
       - node-02:node-02
