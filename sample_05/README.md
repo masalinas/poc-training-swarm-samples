@@ -50,3 +50,5 @@ Use a NFS volume between several tasks in Docker Swarm
     ```
     $ ls -all mnt/volume-share/nfsshare
     ```        
+
+    ![AWS VMs](./images/aws_vms.png "AWS VMs")
