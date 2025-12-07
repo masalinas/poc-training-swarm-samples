@@ -54,7 +54,6 @@ node name where it come from
 Finally we can ñpgon in eedis Database to check the counter key used by node backend to save the value from each request.
 ![Arquitectura Services](./images/swarm_redis_db.png "Arquitectura Services")
 
-If you don't pusblish 
-any port for this service, you can add port mapper at runtime from poprtainer and task selected for example:
+If you don't pusblish any port for this service, you can add port mapper at runtime from poprtainer and task selected for example:
 
 ![Publish port Service](./images/publish_service_ports.png "Publish port Service")
