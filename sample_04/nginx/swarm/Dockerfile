@@ -5,4 +5,4 @@ FROM nginx
 LABEL maintainer="Miguel Salinas Gancedo"
 
 # Copy custom configuration file from the current directory
-COPY swarm/nginx.conf /etc/nginx/nginx.conf
+COPY nginx.conf /etc/nginx/nginx.conf

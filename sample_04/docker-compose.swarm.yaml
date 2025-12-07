@@ -6,6 +6,8 @@ services:
       dockerfile: swarm/Dockerfile
     ports:
       - 80:80
+    deploy:
+      replicas: 3
   node:
     build: ./node
     ports:
