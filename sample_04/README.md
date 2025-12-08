@@ -57,3 +57,8 @@ Finally we can ñpgon in eedis Database to check the counter key used by node ba
 If you don't pusblish any port for this service, you can add port mapper at runtime from poprtainer and task selected for example:
 
 ![Publish port Service](./images/publish_service_ports.png "Publish port Service")
+
+ ## Swarm network
+
+Swarm network architecture
+![swarm network](./images/swarm-network.png "swarm network")
