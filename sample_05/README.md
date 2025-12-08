@@ -13,16 +13,16 @@ Use a NFS volume between several tasks in Docker Swarm
     $ sudo apt install nfs-kernel-server -y
     ```
 
-    Now we muts create a shared folder in the VM with these priviledged and owner
+    Now we must create a shared folder in the VM with these priviledges and owner:
     ```
     $ sudo mkdir -p /mnt/nfsshared
     $ sudo chown nobody:nogroup /mnt/nfsshared
     $ sudo chmod 777 /mnt/nfsshared
     ```
 
-    We must configure the share folders to be publish by the NFS Server
+    We must configure the share folders to be publish by the NFS Server ane be writeable
     ```
-    $ echo "/mnt/nfsshared 172.31.0.0/16(rw,sync,no_subtree_check)" | sudo tee -a /etc/exports
+    $ echo "/mnt/nfsshared 172.31.0.0/16(rw,sync,no_subtree_check,no_root_squash)" | sudo tee -a /etc/exports
     ```
 
     Finally we restart the NFS Server and create a systemctl configuration to start the NFS Server when the VM starts:
@@ -52,3 +52,13 @@ Use a NFS volume between several tasks in Docker Swarm
     ```        
 
     ![AWS VMs](./images/aws_vms.png "AWS VMs")
+
+
+    AWS NFS Shared folder architecture
+    ![AWS NFS Architecture](./images/aws_nfs_folder.png "AWS NFS Architecture")    
+
+- **STEP-03:** Execute stack from manager node
+
+    ```
+    $ docker stack deploy -d -c ./docker-compose.yaml shared-volume-stack
+    ```

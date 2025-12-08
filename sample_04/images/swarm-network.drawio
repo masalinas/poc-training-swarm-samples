@@ -1,5 +1,5 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36" version="29.2.4">
-  <diagram name="Página-1" id="dAyMXzlnHfcWvOnel9mu">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36" version="29.2.4" pages="2">
+  <diagram name="network_architecture" id="dAyMXzlnHfcWvOnel9mu">
     <mxGraphModel dx="1412" dy="729" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="2336" math="0" shadow="0">
       <root>
         <mxCell id="0" />
@@ -165,6 +165,68 @@
         </mxCell>
         <mxCell id="sQ_q3g-3TE6Kqw3-yo0v-45" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="swarm&lt;div&gt;node&lt;/div&gt;" vertex="1">
           <mxGeometry height="30" width="60" x="1280" y="325" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="jJamM41FdTsmPhqQqWw7" name="NFS Shared Folders Architecture">
+    <mxGraphModel dx="1412" dy="729" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="2336" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="wwUNJQPuoZaiRZ_XwMx7-6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" value="" vertex="1">
+          <mxGeometry height="100" width="480" x="600" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="wwUNJQPuoZaiRZ_XwMx7-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="swarm-share&lt;br&gt;Kernel NFS Server" vertex="1">
+          <mxGeometry height="60" width="120" x="190" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="wwUNJQPuoZaiRZ_XwMx7-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="swarm-manager&lt;br&gt;NFS Client" vertex="1">
+          <mxGeometry height="60" width="120" x="620" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="wwUNJQPuoZaiRZ_XwMx7-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="swarm-worker-01&lt;div&gt;NFS Client&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="780" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="wwUNJQPuoZaiRZ_XwMx7-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="swarm-workder-02&lt;div&gt;NFD Client&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="940" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="wwUNJQPuoZaiRZ_XwMx7-5" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="190" y="300" as="sourcePoint" />
+            <mxPoint x="1120" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wwUNJQPuoZaiRZ_XwMx7-7" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="wwUNJQPuoZaiRZ_XwMx7-2" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="680" y="300" as="sourcePoint" />
+            <mxPoint x="740" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wwUNJQPuoZaiRZ_XwMx7-8" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="839.5" y="300" as="sourcePoint" />
+            <mxPoint x="839.5" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wwUNJQPuoZaiRZ_XwMx7-9" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="999.5" y="300" as="sourcePoint" />
+            <mxPoint x="999.5" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wwUNJQPuoZaiRZ_XwMx7-10" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="249.5" y="300" as="sourcePoint" />
+            <mxPoint x="249.5" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wwUNJQPuoZaiRZ_XwMx7-11" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="AWS Network" vertex="1">
+          <mxGeometry height="30" width="60" x="1124" y="285" as="geometry" />
+        </mxCell>
+        <mxCell id="wwUNJQPuoZaiRZ_XwMx7-13" edge="1" parent="1" source="wwUNJQPuoZaiRZ_XwMx7-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="wwUNJQPuoZaiRZ_XwMx7-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="wwUNJQPuoZaiRZ_XwMx7-12" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" value="NFS&lt;div&gt;Shared&lt;br&gt;Folder&lt;/div&gt;" vertex="1">
+          <mxGeometry height="80" width="60" x="70" y="130" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

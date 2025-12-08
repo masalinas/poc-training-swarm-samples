@@ -1,0 +1,16 @@
+version: "3.7"
+services:
+  shared-volume-service:
+    image: busybox:latest    
+    deploy:
+      mode: global      
+    volumes:
+      - shared-volume:/data
+    command: sh -c "while true; do echo \$$HOSTNAME - \$$(date) >> /data/hosts.log; sleep 30; done"
+volumes:
+  shared-volume:
+    driver: local
+    driver_opts:
+      type: nfs
+      o: addr=172.31.74.81,rw,nfsvers=4
+      device: ":/mnt/nfsshared"
