@@ -17,3 +17,7 @@ Some Docker Swarm samples
 - [Sample_04](./sample_04/README.md): 
 
     Deploying a redis database with a backend and frontend nodeJS(scale) with nginx balancer in Docker Standalone and Docker Swarm
+
+- [Sample_05](./sample_05/README.md): 
+
+    Deploying a Busybox using a NFS shared volume in AWS EC2
