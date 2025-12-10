@@ -1,0 +1,31 @@
+version: "3.9"
+
+services:
+  app:
+    image: myapp:latest
+    deploy:
+      replicas: 1
+    configs:
+      - source: app_config
+        target: /app/config.json    # mounted read-only
+    secrets:
+      - db_user
+      - db_pass
+    environment:
+      DB_USER_FILE: /run/secrets/db_user
+      DB_PASS_FILE: /run/secrets/db_pass
+    volumes:
+      - data:/data
+
+configs:
+  app_config:
+    external: true
+
+secrets:
+  db_user:
+    external: true
+  db_pass:
+    external: true
+
+volumes:
+  data:
