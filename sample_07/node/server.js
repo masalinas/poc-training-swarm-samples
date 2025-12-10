@@ -13,9 +13,12 @@ function readFileOrNull(path) {
 const configPath = "/app/config.json";
 const config = JSON.parse(readFileOrNull(configPath) || "{}");
 
-// Load secrets (Swarm secrets)
-const dbUser = readFileOrNull("/run/secrets/db_user") || "NOT_FOUND";
-const dbPass = readFileOrNull("/run/secrets/db_pass") || "NOT_FOUND";
+// Load secrets using env variables
+const dbUserPath = process.env.DB_USER_FILE || "/run/secrets/db_user";
+const dbPassPath = process.env.DB_PASS_FILE || "/run/secrets/db_pass";
+
+const dbUser = readFileOrNull(dbUserPath) || "NOT_FOUND";
+const dbPass = readFileOrNull(dbPassPath) || "NOT_FOUND";
 
 // Simple HTTP server
 const server = http.createServer((req, res) => {
